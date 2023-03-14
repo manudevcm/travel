@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+  <style>
+    .center{
+    margin-left:auto;
+    margin-right:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    }
+
+  </style>
+</head>
+<body style="background-color:#efc9abb5; padding:50px">
+<h1 style="text-align:center">REGISTRATION FORM</h1>
+<div class="center" style="padding:40px">
+<form style="margin:auto" action="about/">
+  {% csrf_token %}
+<table align="center" cellpadding="4" >
+  <tr>
+    <td>Username</td>
+    <TD><input type="text" name="username" placeholder="Enter the username"></TD>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <TD><input type="email" name="email" placeholder="Enter the Email ID"></TD>
+  </tr>
+  <tr>
+    <td>Phone Number</td>
+    <TD><input type="text" name="Phone Number" placeholder="Enter the Phone NUmber"></TD>
+  </tr>
+  <tr>
+    <td>Gender</td>
+    <TD><input type="radio" name="Gender" value="Male"> Male
+      <input type="radio" name="Gender" value="Female">Female</td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <TD><input type="password" name="password" placeholder="Enter the Password"></TD>
+  </tr>
+  <tr>
+    <td>Confirm Password</td>
+    <TD><input type="password" name="password" placeholder="re-type the Password"></TD>
+  </tr>
+  <tr>
+    <td colspan="2"><input type="checkbox">I agree to all terms and conditions<sup style="color:red">*</sup></td>
+  </tr>
+  <tr align="center">
+    <TD colspan="2" align="center"><input type="submit"></TD>
+  </tr>
+</table>
+</form>
+</div>
+{% for msg in messages %}
+<h3 style="color:red;text-align:center"> {{msg}}</h3>
+{% endfor %}
+</body>
+</html>
